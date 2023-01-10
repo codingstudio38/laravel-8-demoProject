@@ -50,10 +50,10 @@ Route::get("adminlogout", [loginCon::class, 'logout']);
 //     Route::get('', '');
 //     Route::get('', '');
 //     Route::get('', '');
-// });   
+// });    
 Route::post("/sendemail", [EmailController::class, 'index']);
 Route::post("/viewdata", [ajax::class, 'index']);
-Route::get("/event-listener", [TestEvent::class, 'index']);
+Route::get("/event-listener", [TestEvent::class, 'index']); 
 
 });
   

@@ -51,7 +51,7 @@
 <div class="form-group" data-for="text">
 <input type="text" name="name" placeholder="Name"  data-form-field="text" class="form-control display-7" value="{{old('name')}}" id="name">
 <span class="text-danger">@error('name') {{$message}} @enderror</span>
-</div> 
+</div>  
 <div data-for="email" class="form-group">
 <input type="email" name="email" placeholder="Email"  data-form-field="email" class="form-control display-7" value="{{old('email')}}" id="email">
 <span class="text-danger">@error('email') {{$message}} @enderror</span>

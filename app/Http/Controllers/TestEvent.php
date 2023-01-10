@@ -4,13 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Events\PostCreated;
-
+use App\Service\TestServiceInterface;
+use App\Models\register;
 class TestEvent extends Controller
 {
-    public function index()
-   {
+    public function index(TestServiceInterface $testservice, Request $reqest)
+   { 
        $data = "Email has been successfully send. Check your inbox.";
-      event(new PostCreated($data));
+     $t=event(new PostCreated($data));
+     $testservice->TestThis();
+     $data = register::first();
+     echo $data['password'];
+    return $data;
       // php artisan make:listener NotifyUser --event=PostCreated
+   }
+ 
+   public function TestService(TestServiceInterface $testservice){
+//  php artisan make:provider 
+// php artisan optimize
+
+
    }
 }

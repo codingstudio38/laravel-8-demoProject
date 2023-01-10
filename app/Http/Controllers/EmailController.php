@@ -24,7 +24,7 @@ class EmailController extends Controller
         Mail::send('mail',$data, function($messages) use ($user){
             $messages->to($user['to']);
             $messages->subject($user['subject']);
-        });
+        }); 
         return "Email has been successfully send.";
     }
 }   

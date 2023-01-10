@@ -8,14 +8,15 @@ use Illuminate\Support\Str;
 class register extends Model
 {
     use HasFactory;
-    public $connection = "mysql";
-    public $table = "admin_table";
+    protected $connection = "mysql";
+    protected $table = "admin_table";
     protected $fillable = [
         'name',
         'email',
         'phone',
         'password'
-    ]; 
+    ];  
+    protected $hidden = ['password'];
     // protected function name():Attribute 
     // {
     //     // return new Attribute(

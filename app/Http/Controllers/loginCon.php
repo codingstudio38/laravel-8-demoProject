@@ -17,8 +17,19 @@ class loginCon extends Controller
         'email' => 'required|email|unique:admin_table',
         'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|digits:10|unique:admin_table',
         'password' => 'required|min:6|max:10'
-        ]);
- 
+        ],[
+        "name.required" => "Name required.",
+        "email.required" => "Email required.",
+        "email.email" => "The email must be a valid email address.",
+        "email.unique" => "The email already exists.",
+        "phone.required" => "Phone no required.",
+        "phone.regex" => "The phone no must be a valid phone number.",
+        "phone.digits" => "The phone no must be 10 digit.",
+        "password.required" => "Password required.",
+        "password.min" => "Password greater than 6 digit.",
+        "password.max" => "Password less than 10 digit.",
+    ]);
+   
      //return $request->all();
         $new = new register;
         $new->name = $request->name;
