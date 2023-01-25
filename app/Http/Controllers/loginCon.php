@@ -17,7 +17,7 @@ class loginCon extends Controller
         'email' => 'required|email|unique:admin_table',
         'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|digits:10|unique:admin_table',
         'password' => 'required|min:6|max:10'
-        ],[
+        ],[ 
         "name.required" => "Name required.",
         "email.required" => "Email required.",
         "email.email" => "The email must be a valid email address.",
