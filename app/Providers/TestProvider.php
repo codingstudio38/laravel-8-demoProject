@@ -9,13 +9,13 @@ class TestProvider extends ServiceProvider
     /**
      * Register services.
      *
-     * @return void
+     * @return void 
      */
     public function register()
     {
         $this->app->bind('App\Service\TestServiceInterface','App\Service\TestService');
     }
- 
+  
     /**
      * Bootstrap services.
      *

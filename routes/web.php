@@ -37,7 +37,7 @@ Route::post("register", [loginCon::class, 'register'])->name('register');
 Route::post("login", [loginCon::class, 'login'])->name('login');
 });
 
-       
+        
  
 Route::group(['prefix'=>'admin/','middleware'=>'notLoggedIn'],function() {
 

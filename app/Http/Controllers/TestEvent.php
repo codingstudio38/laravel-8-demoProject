@@ -18,9 +18,9 @@ class TestEvent extends Controller
     return $data;
       // php artisan make:listener NotifyUser --event=PostCreated
    }
- 
+  
    public function TestService(TestServiceInterface $testservice){
-//  php artisan make:provider 
+//  php artisan make:provider NAME
 // php artisan optimize
 
 
