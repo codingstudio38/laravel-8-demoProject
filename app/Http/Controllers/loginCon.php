@@ -42,7 +42,7 @@ class loginCon extends Controller
                 return redirect('register')->with('massage','Failed To Create Account..!!');
             }
    }
- 
+  
    public function login(Request $request)
    {
        $user= register::where('email', $request->email)->first();

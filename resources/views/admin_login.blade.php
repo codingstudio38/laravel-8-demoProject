@@ -12,7 +12,7 @@
 <section class="content01 cid-snLXqdAfed" id="content01-6">
    
 </section>
-
+ 
  
 <section class="testimonials02 cid-snLXqPU6pR" id="testimonials02-7">
     <div class="container">
@@ -57,8 +57,45 @@
 <div data-for="phone" class="form-group">
 <input type="password" name="password" required placeholder="Password" id="password" data-form-field="password" class="form-control display-7">
 </div>
-<div>
-<button type="submit"style="width: -webkit-fill-available;" class="btn btn-warning display-4">Login</button></div>
+<div> 
+
+<button type="submit"style="width: -webkit-fill-available;" class="btn btn-warning display-4">Login</button>
+<div style=" text-align: center; margin-top: 5px; ">
+    <p>OR</p>
+</div>
+ 
+<a href="{{ action('App\Http\controllers\GoogleController@LoginWithGoogle') }}" style=" background-color: #ed430c !important; border-color: #ff0000 !important; margin-top:-5px; color:white !important;width: -webkit-fill-available;" class="btn btn-danger"><i style="margin-right:5px;" class="fa fa-google" aria-hidden="true"></i> Login with Google</a>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="{{ action('App\Http\controllers\FacebookController@LoginWithFacebook') }}" style="background-color: #665dd8  !important; border-color: #665dd8  !important; margin-top:10px; color:white !important;width: -webkit-fill-available;" class="btn btn-danger"><i style="margin-right:5px;" class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 </form><!--Formbuilder Form-->
 <br>
 <div style="text-align: center">
