@@ -32,10 +32,11 @@ Route::get('/about', function () {
  
 Route::get("login-with-google", [GoogleController::class, 'LoginWithGoogle']);
 Route::get("google-callback", [GoogleController::class, 'CallBackFromGoogle']); 
-
-
+ 
+ 
 Route::get("login-with-facebook", [FacebookController::class, 'LoginWithFacebook']);
 Route::get("facebook-callback", [FacebookController::class, 'CallBackFromFacebook']); 
+ 
 
 Route::group(['middleware'=>'isLoggedIn'],function() {
 Route::get('login', function () { return view('admin_login'); }); 

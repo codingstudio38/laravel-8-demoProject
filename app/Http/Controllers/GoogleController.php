@@ -26,10 +26,11 @@ class GoogleController extends Controller
    }
 
 
-
+ 
    public function CallBackFromGoogle(Request $request){
       try {
-       
+      //   $request->session()->flush();
+      //   $request->session()->regenerate();
         $user= Socialite::driver('google')->user();
         echo "GOOGLE CALLBACK DATA<br>";
         echo "<pre>";
@@ -40,7 +41,9 @@ class GoogleController extends Controller
 
 
       } catch (\Throwable $error) {
-         throw $error;
+        echo "<pre>";
+        dd($error);
+        echo "</pre>";
       }
 
 

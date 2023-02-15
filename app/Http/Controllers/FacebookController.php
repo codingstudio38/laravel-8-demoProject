@@ -10,7 +10,8 @@ class FacebookController extends Controller
 {
     public function LoginWithFacebook(Request $request){
       try {
-       
+      //   $request->session()->flush();
+      //   $request->session()->regenerate();
          return Socialite::driver('facebook')->redirect();
 
       } catch (\Throwable $error) {
@@ -19,23 +20,31 @@ class FacebookController extends Controller
 
    }
 
-
+ 
 
    public function CallBackFromFacebook(Request $request){
       try {
-       
         $user= Socialite::driver('facebook')->user();
         echo "FACEBOOK CALLBACK DATA<br>";
         echo "<pre>";
         print_r($user);
-        echo "</pre>";
+        echo "</pre>"; 
 
       } catch (\Throwable $error) {
         echo "<pre>";
         dd($error);
         echo "</pre>";
       }
-
-
    }
+
+
+
+
+
+
+
+
+
+
+
 }
