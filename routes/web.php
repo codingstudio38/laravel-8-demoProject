@@ -29,7 +29,7 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
- 
+  
 Route::get("login-with-google", [GoogleController::class, 'LoginWithGoogle']);
 Route::get("google-callback", [GoogleController::class, 'CallBackFromGoogle']); 
  
@@ -66,10 +66,8 @@ Route::post("/viewdata", [ajax::class, 'index']);
 Route::get("/event-listener", [TestEvent::class, 'index']); 
 
 });
-  
+   
 Route::group(['prefix'=>'data/','middleware'=>'customheadercheck'],function() {
 Route::get("multiDatabase", [multiplesDatabase::class, 'index']);
 });
  
-
-

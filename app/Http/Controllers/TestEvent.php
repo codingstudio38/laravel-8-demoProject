@@ -14,14 +14,14 @@ class TestEvent extends Controller
      $t=event(new PostCreated($data));
      $testservice->TestThis();
      $data = register::first();
-     echo $data['password'];
+     //echo $data['password'];
     return $data;
       // php artisan make:listener NotifyUser --event=PostCreated
    }
-  
+   
    public function TestService(TestServiceInterface $testservice){
-//  php artisan make:provider NAME
-// php artisan optimize
+// 1-php artisan make:provider NAME
+// 2-php artisan optimize
 
 
    }
