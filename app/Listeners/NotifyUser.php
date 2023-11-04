@@ -6,13 +6,14 @@ use App\Events\PostCreated;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class NotifyUser
+class NotifyUser 
 {
     /**
      * Create the event listener.
      *
      * @return void
      */
+    
     public function __construct()
     {
         //
@@ -26,6 +27,6 @@ class NotifyUser
      */
     public function handle(PostCreated $event)
     {
-     echo $event->data;
+        return array("listener"=>get_class($this),"data"=>$event->datais);
     }
 }

@@ -11,9 +11,9 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
 class PostCreated
-{
+{ 
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public $data;
+    public $datais; 
  
     /**
      * Create a new event instance.
@@ -22,7 +22,7 @@ class PostCreated
      */ 
     public function __construct($data)
     {
-        $this->$data = $data;
+        $this->datais = $data;
     }
 
     /**

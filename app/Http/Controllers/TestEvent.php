@@ -7,15 +7,16 @@ use App\Events\PostCreated;
 use App\Service\TestServiceInterface;
 use App\Models\register;
 class TestEvent extends Controller
-{
+{ 
     public function index(TestServiceInterface $testservice, Request $reqest)
    { 
-       $data = "Email has been successfully send. Check your inbox.";
-     $t=event(new PostCreated($data));
-     $testservice->TestThis();
+      $data = array("message"=>"Email has been successfully send. Check your inbox.");
+     print_r(event(new PostCreated($data)));
+     // $testservice->TestThis();
      $data = register::first();
      //echo $data['password'];
     return $data;
+      // php artisan make:event PostCreated
       // php artisan make:listener NotifyUser --event=PostCreated
    }
    
