@@ -8,6 +8,8 @@ use  App\Http\controllers\TestEvent;
 use  App\Http\controllers\EmailController; 
 use  App\Http\controllers\GoogleController; 
 use  App\Http\controllers\FacebookController; 
+use  App\Http\controllers\MessageController; 
+
 /* 
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,7 +66,7 @@ Route::get("adminlogout", [loginCon::class, 'logout']);
 Route::post("/sendemail", [EmailController::class, 'index']);
 Route::post("/viewdata", [ajax::class, 'index']);
 Route::get("/event-listener", [TestEvent::class, 'index']); 
-
+Route::get("/message-test", [MessageController::class, 'index']); 
 });
    
 Route::group(['prefix'=>'data/','middleware'=>'customheadercheck'],function() {
