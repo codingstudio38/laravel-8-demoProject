@@ -9,6 +9,11 @@ class MessageController extends Controller
     public function index(Request $request) {
         date_default_timezone_set('Asia/Kolkata');
         $date = date('Y-m-d H:i:s');
-        event(new MessageEvents("hello || $date"));
+        $data = array('message'=>"hello || $date");
+        event(new MessageEvents($data));
+    }
+
+    public function MyMessage(Request $request) {
+      return view('admin.MyMessage');
     }
 }

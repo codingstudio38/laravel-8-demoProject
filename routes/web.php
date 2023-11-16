@@ -67,6 +67,7 @@ Route::post("/sendemail", [EmailController::class, 'index']);
 Route::post("/viewdata", [ajax::class, 'index']);
 Route::get("/event-listener", [TestEvent::class, 'index']); 
 Route::get("/message-test", [MessageController::class, 'index']); 
+Route::get("/message", [MessageController::class, 'MyMessage']); 
 });
    
 Route::group(['prefix'=>'data/','middleware'=>'customheadercheck'],function() {
