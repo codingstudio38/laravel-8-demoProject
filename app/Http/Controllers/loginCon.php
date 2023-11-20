@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\register;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Models\personal_access_tokens;
 use Illuminate\Support\Facades\DB;
@@ -60,6 +61,8 @@ class loginCon extends Controller
                 $new->name = $token;
                 $new->token = $hash_token; 
                 $new->save();
+                \Auth::login(User::first());
+                // $request->session()->put('user',$user);
                 $request->session()->put('admin_name',$user->name);
                 $request->session()->put('admin_email',$user->email);
                 $request->session()->put('admin_id',$user->id);
@@ -71,6 +74,7 @@ class loginCon extends Controller
  
     public function logout(Request $r){
         personal_access_tokens::where('id',session()->get('access_token_id'))->delete();
+        \Auth::logout();
         $r->session()->pull('admin_id', null);
         $r->session()->pull('admin_email', null);
         $r->session()->pull('admin_name', null);

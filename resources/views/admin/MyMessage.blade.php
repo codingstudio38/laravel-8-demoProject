@@ -15,8 +15,14 @@
 <body>
      <div id="mytext">
      </div>
+{{-- Echo.channel,private('message-channel'). --}}
+{{-- php artisan config:cache --}}
+{{-- php artisan config:clear --}}
+{{-- php artisan optimize --}}
+
     <script>
-        Echo.channel('message-channel').listen('MessageEvents', (event) => {
+    
+        Echo.private('message-channel').listen('MessageEvents', (event) => {
             console.log(event);
             $('#mytext').html('').html(event.data.message);
         })
