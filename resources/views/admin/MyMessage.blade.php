@@ -21,9 +21,18 @@
 {{-- php artisan optimize --}}
 
     <script>
-    
-        Echo.private('message-channel').listen('MessageEvents', (event) => {
-            console.log(event);
+        Echo.join('track-message-channel')
+        .here((user)=>{
+            console.log("user",user);
+        }) 
+        .joining((user)=>{
+            console.log("joining",user);
+        })
+        .leaving((user)=>{
+            console.log("leaving",user);
+        })
+        .listen('MessageEvents', (event) => {
+            console.log("data",event);
             $('#mytext').html('').html(event.data.message);
         })
     </script>

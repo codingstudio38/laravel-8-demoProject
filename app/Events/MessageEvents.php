@@ -31,7 +31,8 @@ class MessageEvents implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('message-channel');
+        return new PresenceChannel('track-message-channel');
+        // return new PrivateChannel('message-channel');
         // return new Channel('message-channel');
     }
 }
