@@ -29,6 +29,14 @@ class MessageEvents implements ShouldBroadcast
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
+    //  public function broadcastAs()//for broadcast as custom class name
+    // {
+    //     return 'MessageEvents';
+    // }
+    //  public function broadcastWith()//for data stucture modification
+    // {
+    //     return ['custom_message'=>$this->data];
+    // }
     public function broadcastOn()
     {
         return new PresenceChannel('track-message-channel');
