@@ -57,6 +57,7 @@ Route::get("", [loginCon::class, 'viewadminHome']);
 Route::get("adminHome", [loginCon::class, 'viewadminHome']);
 Route::get("adminAbout", [loginCon::class, 'viewadminAbout']);
 Route::get("adminlogout", [loginCon::class, 'logout']);
+Route::get("location-works", [loginCon::class, 'locationWorks']);
 // Route::controller(loginCon::class)->group(function () {
 //     Route::get('', '');
 //     Route::get('', '');
@@ -68,6 +69,7 @@ Route::post("/viewdata", [ajax::class, 'index']);
 Route::get("/event-listener", [TestEvent::class, 'index']); 
 Route::get("/message-test", [MessageController::class, 'index']); 
 Route::get("/message", [MessageController::class, 'MyMessage']); 
+
 });
    
 Route::group(['prefix'=>'data/','middleware'=>'customheadercheck'],function() {

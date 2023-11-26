@@ -119,6 +119,10 @@ class loginCon extends Controller
    }
 
 
+   public function locationWorks() {
+       $data = register::where('id',session()->get('admin_id'))->first();
+        return view('admin.locationWorks',compact('data'));
+   }
    
    
 }
