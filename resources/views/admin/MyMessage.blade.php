@@ -19,23 +19,45 @@
 {{-- php artisan config:cache --}}
 {{-- php artisan config:clear --}}
 {{-- php artisan optimize --}}
+{{-- Echo.join('track-message-channel')// from PresenceChannel('track-message-channel')
+.here((user)=>{
+console.log("user",user);
+})
+.joining((user)=>{
+console.log("joining",user);
+})
+.leaving((user)=>{
+console.log("leaving",user);
+})
+.listen('MessageEvents', (event) => {
+console.log("data",event);
+$('#mytext').html('').html(event.data.message);
+}) --}}
 
-    <script>
-        Echo.join('track-message-channel')
-        .here((user)=>{
-            console.log("user",user);
-        }) 
-        .joining((user)=>{
-            console.log("joining",user);
-        })
-        .leaving((user)=>{
-            console.log("leaving",user);
-        })
+    {{-- <script>
+        Echo.channel('message-channel')
         .listen('MessageEvents', (event) => {
             console.log("data",event);
             $('#mytext').html('').html(event.data.message);
         })
-    </script>
+    </script> --}}
+<script>
+    Echo.join('track-message-channel')
+    .here((user)=>{
+    console.log("user",user);
+    })
+    .joining((user)=>{
+    console.log("joining",user);
+    })
+    .leaving((user)=>{
+    console.log("leaving",user);
+    })
+    .listen('MessageEvents', (event) => {
+    console.log("data",event);
+    $('#mytext').html('').html(event.data.message);
+    })
+
+</script>
 
 </body>
 

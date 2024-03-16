@@ -27,6 +27,24 @@ class EmailController extends Controller
         }); 
         return "Email has been successfully send.";
     }
+
+      public function NicMailTest(Request $r){
+        //rtcvpztfeqnmfwkm
+        //@password@123
+        
+        $data = [
+            'name' =>'bidyut',
+            'data' =>'nis main'
+        ];
+        $user['to'] = 'mondalbidyut38@gmail.com';
+        $user['subject'] = 'NIS MAIL TEST';
+        return Mail::send('mail',$data, function($messages) use ($user){
+            $messages->to($user['to']);
+            $messages->subject($user['subject']);
+        }); 
+        return "Email has been successfully send.";
+    }
+
 }   
 
 ?>

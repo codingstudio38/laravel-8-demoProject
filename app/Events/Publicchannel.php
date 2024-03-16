@@ -10,16 +10,17 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class MessageEvents implements ShouldBroadcast
+class Publicchannel implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public $data;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($data)
+     public $data;
+     public function __construct($data)
     {
         $this->data = $data;
     }
@@ -29,18 +30,9 @@ class MessageEvents implements ShouldBroadcast
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
-    //  public function broadcastAs()//for broadcast as custom class name
-    // {
-    //     return 'MessageEvents';
-    // }
-    //  public function broadcastWith()//for data stucture modification
-    // {
-    //     return ['custom_message'=>$this->data];
-    // }
     public function broadcastOn()
-    { 
-        return new PresenceChannel('track-message-channel');
-        // return new PrivateChannel('message-channel');
-        // return new Channel('message-channel');
+    {
+        // return new PrivateChannel('channel-name');
+        return new Channel('public-channel');
     }
 }

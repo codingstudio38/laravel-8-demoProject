@@ -32,6 +32,8 @@ Route::get('/about', function () {
     return view('about');
 });
   
+Route::get("nic-mail-test", [EmailController::class, 'NicMailTest']);
+
 Route::get("login-with-google", [GoogleController::class, 'LoginWithGoogle']);
 Route::get("google-callback", [GoogleController::class, 'CallBackFromGoogle']); 
  
@@ -63,12 +65,13 @@ Route::get("location-works", [loginCon::class, 'locationWorks']);
 //     Route::get('', '');
 //     Route::get('', '');
 //     Route::get('', '');
-// });    
+// });     
 Route::post("/sendemail", [EmailController::class, 'index']);
 Route::post("/viewdata", [ajax::class, 'index']);
 Route::get("/event-listener", [TestEvent::class, 'index']); 
 Route::get("/message-test", [MessageController::class, 'index']); 
 Route::get("/message", [MessageController::class, 'MyMessage']); 
+Route::get("/publicchannel", [MessageController::class, 'publicchannel']); 
 
 });
    
