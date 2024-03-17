@@ -38,7 +38,7 @@ class MessageEvents implements ShouldBroadcast
     //     return ['custom_message'=>$this->data];
     // }
     public function broadcastOn()
-    { 
+    {   
         return new PresenceChannel('track-message-channel');
         // return new PrivateChannel('message-channel');
         // return new Channel('message-channel');

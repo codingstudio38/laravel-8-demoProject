@@ -35,13 +35,13 @@ $('#mytext').html('').html(event.data.message);
 }) --}}
 
     {{-- <script>
-        Echo.channel('message-channel')
-        .listen('MessageEvents', (event) => {
+        Echo.channel('public-channel')
+        .listen('Publicchannel', (event) => {
             console.log("data",event);
             $('#mytext').html('').html(event.data.message);
         })
     </script> --}}
-<script>
+<script> 
     Echo.join('track-message-channel')
     .here((user)=>{
     console.log("user",user);

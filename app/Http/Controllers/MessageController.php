@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Events\MessageEvents;
 use App\Events\Publicchannel;
+use App\Models\User;
 class MessageController extends Controller
 {
     public function index(Request $request) {
@@ -41,6 +42,11 @@ class MessageController extends Controller
        
     }
 
+
+public function ForChatLogin(Request $request){
+ \Auth::login(User::first());
+ return \Auth::user();
+}
     public function MyMessage(Request $request) {
       return view('admin.MyMessage');
     }

@@ -78,4 +78,9 @@ Route::get("/publicchannel", [MessageController::class, 'publicchannel']);
 Route::group(['prefix'=>'data/','middleware'=>'customheadercheck'],function() {
 Route::get("multiDatabase", [multiplesDatabase::class, 'index']);
 });
+
+// php artisan config:cache 
+// php artisan config:clear 
+// php artisan optimize 
+Route::post("/myblog/access/ForChatLogin", [MessageController::class, 'ForChatLogin']); 
  

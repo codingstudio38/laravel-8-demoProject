@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Broadcast;
-
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Broadcast Channels
@@ -21,7 +21,11 @@ Broadcast::channel('message-channel', function ($user) {
     return true;
     // return session()->has('user') ? true : false; 
 });
+Broadcast::channel('public-channel', function ($user) {
+    return true;
+});
 
 Broadcast::channel('track-message-channel', function ($user) {
+    // return User::first();
     return $user;
-});
+}); 
