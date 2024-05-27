@@ -33,6 +33,7 @@ Route::get('/about', function () {
 });
   
 Route::get("nic-mail-test", [EmailController::class, 'NicMailTest']);
+Route::get("nic-mail-test2", [EmailController::class, 'NicMailTest1']);
 
 Route::get("login-with-google", [GoogleController::class, 'LoginWithGoogle']);
 Route::get("google-callback", [GoogleController::class, 'CallBackFromGoogle']); 
